@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://daotmeitafxcg"]
+
+[ext_resource type="PackedScene" uid="uid://dlu0jn125afwn" path="res://assets/GamechangerStage.fbx" id="1_e7dpx"]
+[ext_resource type="Texture2D" uid="uid://ditsunbnpvx06" path="res://assets/textures/diffuse.png" id="2_htbrm"]
+[ext_resource type="Texture2D" uid="uid://cp4wqjb113nm1" path="res://assets/textures/height.png" id="3_ho53y"]
+[ext_resource type="Texture2D" uid="uid://dsmwaw6xayfrp" path="res://assets/textures/normal.png" id="4_bcxak"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jm230"]
+albedo_texture = ExtResource("2_htbrm")
+normal_enabled = true
+normal_texture = ExtResource("4_bcxak")
+heightmap_enabled = true
+heightmap_scale = 1.929
+heightmap_texture = ExtResource("3_ho53y")
+
+[node name="GamechangerStage" instance=ExtResource("1_e7dpx")]
+
+[node name="Plane" parent="." index="0"]
+surface_material_override/1 = SubResource("StandardMaterial3D_jm230")

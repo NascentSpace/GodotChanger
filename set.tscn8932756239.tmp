@@ -1,0 +1,566 @@
+[gd_scene load_steps=34 format=3 uid="uid://oggwgc5f35kb"]
+
+[ext_resource type="Texture2D" uid="uid://c5iisb3575y8q" path="res://assets/textures/neon_photostudio_2k.hdr" id="1_3a866"]
+[ext_resource type="Script" uid="uid://mju0h2pfhtww" path="res://scenes/gameset.gd" id="1_vwgbe"]
+[ext_resource type="PackedScene" uid="uid://bl77w784mtq0" path="res://assets/GamechangerSign.fbx" id="2_tb532"]
+[ext_resource type="AudioStream" uid="uid://2ps0wi8qf3hy" path="res://assets/audio/shs_cyber_button_ui_access_high_2.wav" id="2_v401i"]
+[ext_resource type="PackedScene" uid="uid://3gbvuqj1h5qu" path="res://scenes/controlwindow.tscn" id="3_08tdj"]
+[ext_resource type="AudioStream" uid="uid://doqme4onr2f5y" path="res://assets/audio/Game Changer - Outro Theme Music.mp3" id="3_h17cr"]
+[ext_resource type="AudioStream" uid="uid://bgf0j3n55v5n7" path="res://assets/audio/shs_cyber_button_ui_denied_error_negative_double_3.wav" id="3_wxows"]
+[ext_resource type="AudioStream" uid="uid://b8s88vo0lxqse" path="res://assets/audio/point.mp3" id="4_uir0v"]
+[ext_resource type="PackedScene" uid="uid://dx4mcaf7qsrqg" path="res://scenes/gamechanger_podium.tscn" id="5_3a866"]
+[ext_resource type="PackedScene" uid="uid://daotmeitafxcg" path="res://scenes/gamechanger_stage.tscn" id="5_vwgbe"]
+[ext_resource type="AudioStream" uid="uid://2t82rqw6n3fn" path="res://assets/audio/Game Changer - Intro Theme Music.mp3" id="9_wxows"]
+[ext_resource type="Material" uid="uid://cwtd8er0p1j1t" path="res://assets/confetti.tres" id="10_rl3yw"]
+[ext_resource type="PackedScene" uid="uid://bjqu0i4jkh7vw" path="res://assets/Curtain.fbx" id="12_nqrg3"]
+[ext_resource type="PackedScene" uid="uid://cbwru3y1pdjtq" path="res://assets/GamechangerPodiumNoSign.fbx" id="13_03s4m"]
+[ext_resource type="PackedScene" uid="uid://du8hd2llm13kq" path="res://scenes/television.tscn" id="14_tbuau"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_v401i"]
+panorama = ExtResource("1_3a866")
+energy_multiplier = 0.0
+
+[sub_resource type="Sky" id="Sky_wxows"]
+sky_material = SubResource("PanoramaSkyMaterial_v401i")
+
+[sub_resource type="Environment" id="Environment_rt668"]
+background_mode = 2
+background_energy_multiplier = 0.0
+sky = SubResource("Sky_wxows")
+ambient_light_source = 3
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 0.0
+tonemap_mode = 2
+ssr_enabled = true
+ssao_enabled = true
+ssil_enabled = true
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+glow_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.02
+adjustment_enabled = true
+
+[sub_resource type="FogMaterial" id="FogMaterial_h17cr"]
+density = 8.0
+
+[sub_resource type="Curve3D" id="Curve3D_uir0v"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7.5),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+up_vector_enabled = false
+
+[sub_resource type="Animation" id="Animation_v401i"]
+resource_name = "Intro"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camholder/Camera3D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 3.53, 6.19667, 8.9977),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.03293, 3.87709, -4.82183), Vector3(-2.41063, 2.06689, -4.82183), Vector3(-2.41063, 2.06689, 0.730753), Vector3(-0.860215, 1.95153, 0.152413)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camholder/Camera3D:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 3.53, 6.19667, 8.9977),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, -1.55961, 0), Vector3(0, -1.55961, 0), Vector3(0, -1.55961, 0), Vector3(0, -2.2453, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lights/SpotLight3D6:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.233333, 1.23333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 13.037]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Lights/SpotLight3D5:light_energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.233333, 1.23333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 13.037]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Lights/SpotLight3D4:light_energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.233333, 1.23333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 13.037]
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Curtain:scale:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.319, -0.25, 0, 0.25, 0, 0.099, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(8.26, 9.31)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Curtain:scale:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(8.26, 9.31)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Curtain:scale:z")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(8.26, 9.31)
+}
+
+[sub_resource type="Animation" id="Animation_wxows"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camholder/Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.03293, 3.87709, -4.82183)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camholder/Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, -1.55961, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Lights/SpotLight3D6:light_energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [13.037]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Lights/SpotLight3D5:light_energy")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [13.037]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Lights/SpotLight3D4:light_energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [13.037]
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Curtain:scale:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.319, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Curtain:scale:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Curtain:scale:z")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rl3yw"]
+_data = {
+&"Intro": SubResource("Animation_v401i"),
+&"RESET": SubResource("Animation_wxows")
+}
+
+[sub_resource type="Animation" id="Animation_rl3yw"]
+resource_name = "Entrance"
+length = 6.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TempPlayer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(1.90386, -0.25, 0, 0.25, 0, 3.37681, -0.446737, -0.0895739, 0.486596, 0.127462, 2.6678, -0.566667, 0.345288, 0.466667, -0.260129, 2.6678, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.913404, 4.83333, 6.4)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TempPlayer:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(2.241, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TempPlayer:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(4.75509, -0.25, 0, 0.133333, -0.496899, 3.34809, -0.813404, 0.578829, 0.486596, -0.18651, 2.64881, -0.966667, 0.444239, 0.833333, -0.618097, -1.31996, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.913404, 4.83333, 6.4)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TempPlayer:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(4.86, 6.4)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TempPlayer:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-2.23577, -0.25, 0, 0.25, 0, -1.8326, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(4.86, 6.4)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TempPlayer:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(4.86, 6.4)
+}
+
+[sub_resource type="Animation" id="Animation_h17cr"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TempPlayer:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.90386, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TempPlayer:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.68126, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TempPlayer:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(4.75509, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("TempPlayer:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("TempPlayer:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1.8326, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("TempPlayer:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nqrg3"]
+_data = {
+&"Entrance": SubResource("Animation_rl3yw"),
+&"RESET": SubResource("Animation_h17cr")
+}
+
+[sub_resource type="QuadMesh" id="QuadMesh_03s4m"]
+
+[sub_resource type="Curve" id="Curve_wxows"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_rl3yw"]
+curve = SubResource("Curve_wxows")
+
+[sub_resource type="Curve" id="Curve_03s4m"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.854415, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_tbuau"]
+curve = SubResource("Curve_03s4m")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h17cr"]
+emission_shape_offset = Vector3(0, 2.485, 0)
+emission_shape_scale = Vector3(3.375, 1, 1)
+emission_shape = 1
+emission_sphere_radius = 1.0
+direction = Vector3(0.15, 0, 0)
+gravity = Vector3(0, -4.775, 0)
+damping_max = 1.907
+scale_min = 0.3
+scale_curve = SubResource("CurveTexture_tbuau")
+color = Color(0.751376, 0.737215, 0.865247, 1)
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+hue_variation_curve = SubResource("CurveTexture_rl3yw")
+turbulence_enabled = true
+turbulence_noise_strength = 0.1
+turbulence_noise_scale = 1.0
+collision_mode = 1
+collision_friction = 0.14
+collision_bounce = 0.1
+
+[sub_resource type="QuadMesh" id="QuadMesh_rl3yw"]
+material = ExtResource("10_rl3yw")
+size = Vector2(0.045, 0.09)
+
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("SFX", "Anim", "IntroAnim", "Music", "Cam", "Env", "TempProfile", "Target", "CamPositions", "path")]
+script = ExtResource("1_vwgbe")
+SFX = NodePath("AudioStreamPlayer")
+Anim = NodePath("AnimationPlayer")
+IntroAnim = NodePath("PlayerIntros")
+Music = NodePath("Music")
+IntroSong = ExtResource("9_wxows")
+OutroSong = ExtResource("3_h17cr")
+GoodDing = ExtResource("4_uir0v")
+BadDing = ExtResource("3_wxows")
+Cam = NodePath("Camholder/Camera3D")
+Env = NodePath("WorldEnvironment")
+TempProfile = NodePath("TempPlayer")
+Target = NodePath("Camholder/SmoothCam")
+CamPositions = [NodePath("CameraPositions/1"), NodePath("CameraPositions/2")]
+PodiumTscn = ExtResource("5_3a866")
+path = NodePath("Podiums/Path3D")
+
+[node name="Camholder" type="Node3D" parent="."]
+
+[node name="SmoothCam" type="Node3D" parent="Camholder"]
+
+[node name="Camera3D" type="Camera3D" parent="Camholder"]
+transform = Transform3D(0.0111861, 0, -0.999937, 0, 1, 0, 0.999937, 0, 0.0111861, 1.03293, 3.87709, -4.82183)
+fov = 47.8125
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rt668")
+
+[node name="Window" parent="." node_paths=PackedStringArray("PlayerPanels") instance=ExtResource("3_08tdj")]
+PlayerPanels = []
+
+[node name="GamechangerSign" parent="." instance=ExtResource("2_tb532")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.00578, 3.87011, -4.82162)
+
+[node name="GamechangerStage" parent="." instance=ExtResource("5_vwgbe")]
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.963937, 1.1972, -3.72261)
+visible = false
+size = Vector3(1.99298, 2, 8.90625)
+material = SubResource("FogMaterial_h17cr")
+
+[node name="Podiums" type="Node3D" parent="."]
+
+[node name="Path3D" type="Path3D" parent="Podiums"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.2, -7.75)
+curve = SubResource("Curve3D_uir0v")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_v401i")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_rl3yw")
+}
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_wxows")
+
+[node name="PlayerIntros" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nqrg3")
+}
+
+[node name="TempPlayer" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.258823, 0, -0.965925, 0, 1, 0, 0.965925, 0, -0.258823, 1.90386, 1.68126, 4.75509)
+mesh = SubResource("QuadMesh_03s4m")
+
+[node name="Lights" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Lights"]
+transform = Transform3D(1, 0, 0, 0, -0.0317771, 0.999495, 0, -0.999495, -0.0317771, -2.35873, 10.1498, -3.54982)
+light_energy = 0.0
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.807681, -0.00817062, -0.589563, 0.589619, 0.0111924, 0.807604, 0, -0.999904, 0.0138574, -3.88393, 7.14651, 1.94025)
+light_energy = 13.037
+spot_range = 13.169
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.807681, -0.00817062, -0.589563, 0.589619, 0.0111924, 0.807604, 0, -0.999904, 0.0138574, -3.88393, 7.14651, -2.6969)
+light_energy = 13.037
+spot_range = 13.169
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="Lights"]
+transform = Transform3D(0.807681, -0.00817062, -0.589563, 0.589619, 0.0111924, 0.807604, 0, -0.999904, 0.0138574, -3.88393, 7.14651, -7.32923)
+light_energy = 13.037
+spot_range = 13.169
+
+[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(-5.79194e-08, 0, -1, 0, 1.42543, 0, 1.32504, 0, -4.37114e-08, 1.64239, 5.26211, -4.01916)
+emitting = false
+amount = 1500
+lifetime = 10.0
+speed_scale = 0.7
+collision_base_size = 0.02
+local_coords = true
+transform_align = 3
+process_material = SubResource("ParticleProcessMaterial_h17cr")
+draw_pass_1 = SubResource("QuadMesh_rl3yw")
+
+[node name="GPUParticlesCollisionBox3D" type="GPUParticlesCollisionBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.137758, -0.311095, -4.58398)
+size = Vector3(7.97556, 0.543579, 11.168)
+
+[node name="GPUParticlesCollisionBox3D2" type="GPUParticlesCollisionBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.61833, 2.49886, -4.58398)
+size = Vector3(0.86343, 6.19562, 11.168)
+
+[node name="Curtain" parent="." instance=ExtResource("12_nqrg3")]
+transform = Transform3D(-0.214514, 0, -0.740135, 0, 1, 0, 0.236103, 0, -0.672458, 4.46981, 6.32158, 1.61495)
+
+[node name="GamechangerPodiumNoSign" parent="." instance=ExtResource("13_03s4m")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.89678, 0.192357, 2.49878)
+
+[node name="Television" parent="." instance=ExtResource("14_tbuau")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0585811, 2.55446, 3.91929)
+
+[node name="CameraPositions" type="Node3D" parent="."]
+
+[node name="1" type="Node3D" parent="CameraPositions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.28769, 2.14764, -3.99495)
+
+[node name="2" type="Node3D" parent="CameraPositions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.223948, 1.95995, -9.11881)

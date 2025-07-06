@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://du8hd2llm13kq"]
+
+[ext_resource type="PackedScene" uid="uid://csir7q05j2xx8" path="res://assets/Television.fbx" id="1_ccm7p"]
+[ext_resource type="Texture2D" uid="uid://cbbugqmapb34h" path="res://assets/textures/hello.png" id="2_3fxiq"]
+[ext_resource type="Script" uid="uid://ccskjked71v5n" path="res://scenes/television.gd" id="2_qcggj"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_3fxiq"]
+viewport_path = NodePath("Cube_002/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qcggj"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_3fxiq")
+
+[node name="Television" node_paths=PackedStringArray("Text", "DisplayImage", "Background") instance=ExtResource("1_ccm7p")]
+script = ExtResource("2_qcggj")
+Text = NodePath("Cube_002/SubViewport/Label")
+DisplayImage = NodePath("Cube_002/SubViewport/ScreenImage")
+Background = NodePath("Cube_002/SubViewport/Bg")
+
+[node name="Cube_002" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_qcggj")
+
+[node name="SubViewport" type="SubViewport" parent="Cube_002" index="0"]
+handle_input_locally = false
+render_target_update_mode = 4
+
+[node name="Bg" type="ColorRect" parent="Cube_002/SubViewport" index="0"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Cube_002/SubViewport" index="1"]
+anchors_preset = -1
+anchor_left = 0.03125
+anchor_top = 0.175781
+anchor_right = 0.96875
+anchor_bottom = 0.826172
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Get Ready For A Game Changer!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+text_overrun_behavior = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="ScreenImage" type="TextureRect" parent="Cube_002/SubViewport" index="2"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3fxiq")
+expand_mode = 2
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true

@@ -1,0 +1,349 @@
+[gd_scene load_steps=4 format=3 uid="uid://3gbvuqj1h5qu"]
+
+[ext_resource type="Script" uid="uid://bvc4qoi6l34e6" path="res://scenes/controlwindow.gd" id="1_1f0dp"]
+[ext_resource type="PackedScene" uid="uid://cpe6mwti4oy3t" path="res://scenes/pcontrol_node.tscn" id="2_blgyc"]
+[ext_resource type="Theme" uid="uid://bprxr32atce1r" path="res://assets/Gamechanger_theme.tres" id="3_1pm0t"]
+
+[node name="Window" type="Window" node_paths=PackedStringArray("PlayerPanels", "StartButton", "AddPlayer", "SmoothCam", "LightsOn", "LightClr", "ScreenCam", "ScreenApply", "ScreenText", "TimerToggle", "Countdown", "TimerAmount", "StartTimer", "PauseTimer", "EndButton", "Camposb1", "Camposb2", "FOVLabel", "FOVSlider", "FOVReset")]
+auto_translate_mode = 1
+title = "Control Panel"
+initial_position = 1
+size = Vector2i(800, 650)
+script = ExtResource("1_1f0dp")
+PlayerPanels = [NodePath("Control/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/PlayerControl1"), NodePath("Control/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/PlayerControl2"), NodePath("Control/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/PlayerControl3"), NodePath("Control/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/PlayerControl4"), NodePath("Control/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/PlayerControl5"), NodePath("Control/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/PlayerControl6"), NodePath("Control/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer/PlayerControl7")]
+StartButton = NodePath("Control/VBoxContainer/Panel/HBoxContainer/VBoxContainer/Start")
+AddPlayer = NodePath("Control/VBoxContainer/Panel/HBoxContainer/VBoxContainer/AddPlayer")
+SmoothCam = NodePath("Control/VBoxContainer/Panel/HBoxContainer/VBoxContainer/CheckButton")
+LightsOn = NodePath("Control/VBoxContainer/Panel2/HBoxContainer/LightPanel/VBoxContainer/Button")
+LightClr = NodePath("Control/VBoxContainer/Panel2/HBoxContainer/LightPanel/VBoxContainer/ColorPickerButton")
+ScreenCam = NodePath("Control/VBoxContainer/Panel3/HBoxContainer/VBoxContainer/HBoxContainer/ScreenCam")
+ScreenApply = NodePath("Control/VBoxContainer/Panel2/HBoxContainer/Screen/ScreenApply")
+ScreenText = NodePath("Control/VBoxContainer/Panel2/HBoxContainer/Screen/TextEdit")
+TimerToggle = NodePath("Control/VBoxContainer/Panel2/HBoxContainer/TimerPanel/VBoxContainer/HBoxContainer/CheckButton")
+Countdown = NodePath("Control/VBoxContainer/Panel2/HBoxContainer/TimerPanel/VBoxContainer/HBoxContainer/CheckButton2")
+TimerAmount = NodePath("Control/VBoxContainer/Panel2/HBoxContainer/TimerPanel/VBoxContainer/LineEdit")
+StartTimer = NodePath("Control/VBoxContainer/Panel2/HBoxContainer/TimerPanel/VBoxContainer/HBoxContainer2/Start")
+PauseTimer = NodePath("Control/VBoxContainer/Panel2/HBoxContainer/TimerPanel/VBoxContainer/HBoxContainer2/Pause")
+EndButton = NodePath("Control/VBoxContainer/Panel/HBoxContainer/VBoxContainer/Outro")
+Camposb1 = NodePath("Control/VBoxContainer/Panel3/HBoxContainer/VBoxContainer/HBoxContainer/Pos1")
+Camposb2 = NodePath("Control/VBoxContainer/Panel3/HBoxContainer/VBoxContainer/HBoxContainer/Pos2")
+FOVLabel = NodePath("Control/VBoxContainer/Panel3/HBoxContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/HBoxContainer/CurrentFoV")
+FOVSlider = NodePath("Control/VBoxContainer/Panel3/HBoxContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/FOVSlider")
+FOVReset = NodePath("Control/VBoxContainer/Panel3/HBoxContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/Button")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer/Panel"]
+custom_minimum_size = Vector2(780, 110)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0125
+anchor_top = 0.0233645
+anchor_right = 0.9875
+anchor_bottom = 0.981308
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+
+[node name="Start" type="Button" parent="Control/VBoxContainer/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = " Play Intro "
+
+[node name="AddPlayer" type="Button" parent="Control/VBoxContainer/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "Add Players"
+
+[node name="Outro" type="Button" parent="Control/VBoxContainer/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = " Outro "
+
+[node name="CheckButton" type="CheckButton" parent="Control/VBoxContainer/Panel/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Smoothcam"
+
+[node name="Panel" type="Panel" parent="Control/VBoxContainer/Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"Subpanel"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer/Panel/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.966851
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="PlayerControl1" parent="Control/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer" instance=ExtResource("2_blgyc")]
+layout_mode = 2
+
+[node name="PlayerControl2" parent="Control/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer" instance=ExtResource("2_blgyc")]
+layout_mode = 2
+ID = 2
+
+[node name="PlayerControl3" parent="Control/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer" instance=ExtResource("2_blgyc")]
+layout_mode = 2
+ID = 3
+
+[node name="PlayerControl4" parent="Control/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer" instance=ExtResource("2_blgyc")]
+layout_mode = 2
+ID = 4
+
+[node name="PlayerControl5" parent="Control/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer" instance=ExtResource("2_blgyc")]
+layout_mode = 2
+ID = 5
+
+[node name="PlayerControl6" parent="Control/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer" instance=ExtResource("2_blgyc")]
+layout_mode = 2
+ID = 6
+
+[node name="PlayerControl7" parent="Control/VBoxContainer/Panel/HBoxContainer/Panel/HBoxContainer" instance=ExtResource("2_blgyc")]
+layout_mode = 2
+ID = 7
+
+[node name="Panel2" type="Panel" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer/Panel2"]
+custom_minimum_size = Vector2(780, 110)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0125
+anchor_top = 0.0801527
+anchor_right = 0.9875
+anchor_bottom = 0.919847
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="LightPanel" type="Panel" parent="Control/VBoxContainer/Panel2/HBoxContainer"]
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme = ExtResource("3_1pm0t")
+theme_type_variation = &"Subpanel"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/Panel2/HBoxContainer/LightPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0416667
+anchor_top = 0.0335196
+anchor_right = 0.958333
+anchor_bottom = 0.96648
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("3_1pm0t")
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="CheckButton" parent="Control/VBoxContainer/Panel2/HBoxContainer/LightPanel/VBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "Lights"
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Control/VBoxContainer/Panel2/HBoxContainer/LightPanel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 26.825)
+layout_mode = 2
+color = Color(1, 1, 1, 1)
+
+[node name="Button2" type="CheckButton" parent="Control/VBoxContainer/Panel2/HBoxContainer/LightPanel/VBoxContainer"]
+layout_mode = 2
+text = "Disco Lights"
+
+[node name="Screen" type="VBoxContainer" parent="Control/VBoxContainer/Panel2/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ScreenApply" type="Button" parent="Control/VBoxContainer/Panel2/HBoxContainer/Screen"]
+layout_mode = 2
+text = "Screen Text Apply"
+
+[node name="TextEdit" type="TextEdit" parent="Control/VBoxContainer/Panel2/HBoxContainer/Screen"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="TimerPanel" type="Panel" parent="Control/VBoxContainer/Panel2/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"Subpanel"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/Panel2/HBoxContainer/TimerPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0126582
+anchor_top = 0.0167598
+anchor_right = 0.987342
+anchor_bottom = 0.960894
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer/Panel2/HBoxContainer/TimerPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="CheckButton" type="CheckButton" parent="Control/VBoxContainer/Panel2/HBoxContainer/TimerPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Timer Visible"
+
+[node name="CheckButton2" type="CheckButton" parent="Control/VBoxContainer/Panel2/HBoxContainer/TimerPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Countdown"
+
+[node name="LineEdit" type="LineEdit" parent="Control/VBoxContainer/Panel2/HBoxContainer/TimerPanel/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Time in seconds..."
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/VBoxContainer/Panel2/HBoxContainer/TimerPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Start" type="Button" parent="Control/VBoxContainer/Panel2/HBoxContainer/TimerPanel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Start Timer"
+
+[node name="Pause" type="Button" parent="Control/VBoxContainer/Panel2/HBoxContainer/TimerPanel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Pause"
+
+[node name="Button" type="Button" parent="Control/VBoxContainer/Panel2/HBoxContainer/TimerPanel/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Reset"
+
+[node name="CheckButton" type="CheckButton" parent="Control/VBoxContainer/Panel2/HBoxContainer/TimerPanel/VBoxContainer"]
+layout_mode = 2
+text = "Circle Timer"
+
+[node name="CheckButton2" type="CheckButton" parent="Control/VBoxContainer/Panel2/HBoxContainer/TimerPanel/VBoxContainer"]
+layout_mode = 2
+button_pressed = true
+text = "Timer End Sound"
+
+[node name="Panel3" type="Panel" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer/Panel3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00625
+anchor_top = 0.11215
+anchor_right = 0.99375
+anchor_bottom = 0.976636
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/Panel3/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer/Panel3/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="Pos1" type="Button" parent="Control/VBoxContainer/Panel3/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Center"
+
+[node name="Pos2" type="Button" parent="Control/VBoxContainer/Panel3/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Left Side"
+
+[node name="ScreenCam" type="Button" parent="Control/VBoxContainer/Panel3/HBoxContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "Screen"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/VBoxContainer/Panel3/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="ScreenCam" type="Button" parent="Control/VBoxContainer/Panel3/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+disabled = true
+text = "Screen"
+
+[node name="Panel" type="Panel" parent="Control/VBoxContainer/Panel3/HBoxContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"Subpanel"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/VBoxContainer/Panel3/HBoxContainer/VBoxContainer/HBoxContainer2/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer/Panel3/HBoxContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/Panel3/HBoxContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "FOV Slider:"
+
+[node name="CurrentFoV" type="Label" parent="Control/VBoxContainer/Panel3/HBoxContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Current FOV"
+
+[node name="FOVSlider" type="HSlider" parent="Control/VBoxContainer/Panel3/HBoxContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer"]
+layout_mode = 2
+min_value = 20.0
+max_value = 120.0
+value = 42.0
+tick_count = 7
+
+[node name="Button" type="Button" parent="Control/VBoxContainer/Panel3/HBoxContainer/VBoxContainer/HBoxContainer2/Panel/VBoxContainer"]
+custom_minimum_size = Vector2(80, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Reset"
+
+[node name="Panel" type="Panel" parent="Control/VBoxContainer/Panel3/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="Control/VBoxContainer/Panel3"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Extra Camera Controls"

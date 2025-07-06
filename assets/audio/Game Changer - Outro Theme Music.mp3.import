@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://doqme4onr2f5y"
+path="res://.godot/imported/Game Changer - Outro Theme Music.mp3-aadf9e576cf211521abff252d16f8134.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Game Changer - Outro Theme Music.mp3"
+dest_files=["res://.godot/imported/Game Changer - Outro Theme Music.mp3-aadf9e576cf211521abff252d16f8134.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

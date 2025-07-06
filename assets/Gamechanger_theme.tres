@@ -1,0 +1,70 @@
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://bprxr32atce1r"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ivt80"]
+bg_color = Color(0.476627, 0.347429, 0.301488, 1)
+border_width_bottom = 4
+border_color = Color(0.396078, 0.364706, 0.372549, 0.745098)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hmmjm"]
+bg_color = Color(0.952712, 0.620129, 0.353355, 1)
+border_width_bottom = 4
+border_color = Color(0.396078, 0.364706, 0.372549, 0.745098)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fap7p"]
+bg_color = Color(0.467115, 0.695169, 0.867498, 1)
+border_width_bottom = 4
+border_color = Color(0.396078, 0.364706, 0.372549, 0.745098)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q8l8k"]
+bg_color = Color(0.772192, 0.425767, 0.291532, 1)
+border_width_bottom = 4
+border_color = Color(0.396078, 0.364706, 0.372549, 0.745098)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vga35"]
+bg_color = Color(0.33017, 0.55412, 0.695797, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ql6yf"]
+bg_color = Color(0.33017, 0.55412, 0.695797, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_elan5"]
+bg_color = Color(0.305886, 0.448361, 0.567067, 1)
+border_width_bottom = 4
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[resource]
+Button/styles/disabled = SubResource("StyleBoxFlat_ivt80")
+Button/styles/hover = SubResource("StyleBoxFlat_hmmjm")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_fap7p")
+Button/styles/normal = SubResource("StyleBoxFlat_q8l8k")
+Button/styles/pressed = SubResource("StyleBoxFlat_fap7p")
+Panel/styles/panel = SubResource("StyleBoxFlat_vga35")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_ql6yf")
+Subpanel/base_type = &"Panel"
+Subpanel/styles/panel = SubResource("StyleBoxFlat_elan5")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://ce2bvak1wrbgr"]
+
+[ext_resource type="Script" uid="uid://bkd36ell4odks" path="res://global.gd" id="1_4pk28"]
+[ext_resource type="Texture2D" uid="uid://cbbugqmapb34h" path="res://assets/textures/hello.png" id="2_nmxvb"]
+
+[node name="Global" type="Node"]
+script = ExtResource("1_4pk28")
+playerpics = [ExtResource("2_nmxvb"), ExtResource("2_nmxvb"), ExtResource("2_nmxvb"), ExtResource("2_nmxvb"), ExtResource("2_nmxvb"), ExtResource("2_nmxvb"), ExtResource("2_nmxvb")]
+playernames = Array[String](["PlaceHolder", "PlaceHolder", "PlaceHolder", "PlaceHolder", "PlaceHolder", "PlaceHolder", "PlaceHolder"])

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://2t82rqw6n3fn"
+path="res://.godot/imported/Game Changer - Intro Theme Music.mp3-132d6fc192ea244ab2409a1ed550f62f.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Game Changer - Intro Theme Music.mp3"
+dest_files=["res://.godot/imported/Game Changer - Intro Theme Music.mp3-132d6fc192ea244ab2409a1ed550f62f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

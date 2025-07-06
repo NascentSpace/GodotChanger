@@ -1,0 +1,16 @@
+[remap]
+
+importer="dialogue_manager"
+importer_version=15
+type="Resource"
+uid="uid://sqoasmmsdk23"
+path="res://.godot/imported/intro_blurb.dialogue-372fecf6b1872ed840bccf30ff4b5776.tres"
+
+[deps]
+
+source_file="res://assets/dialogue/intro_blurb.dialogue"
+dest_files=["res://.godot/imported/intro_blurb.dialogue-372fecf6b1872ed840bccf30ff4b5776.tres"]
+
+[params]
+
+defaults=true

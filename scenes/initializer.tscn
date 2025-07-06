@@ -1,0 +1,1045 @@
+[gd_scene load_steps=15 format=3 uid="uid://pglnvrs41j5v"]
+
+[ext_resource type="Script" uid="uid://7sqqnhucc326" path="res://scenes/initializer.gd" id="1_5o3n5"]
+[ext_resource type="Texture2D" uid="uid://cbbugqmapb34h" path="res://assets/textures/hello.png" id="1_7ffih"]
+[ext_resource type="Script" uid="uid://ntx0ihk3ukcp" path="res://scenes/player_input.gd" id="1_638en"]
+[ext_resource type="Script" uid="uid://bhih1fe8oyv01" path="res://scenes/blurb_edit.gd" id="4_g2ykj"]
+[ext_resource type="Shader" uid="uid://t724nuepxcx5" path="res://assets/blur.gdshader" id="4_uxp0c"]
+[ext_resource type="Texture2D" uid="uid://ds40v4lhqeh4q" path="res://icon.svg" id="5_cqp4h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uxp0c"]
+bg_color = Color(0.6, 0.6, 0.6, 0.478431)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqp4h"]
+bg_color = Color(0.6, 0.6, 0.6, 0.478431)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tya4k"]
+bg_color = Color(0.6, 0.6, 0.6, 0.478431)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32amy"]
+bg_color = Color(0.6, 0.6, 0.6, 0.478431)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8fmm"]
+bg_color = Color(0.6, 0.6, 0.6, 0.478431)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jcs1w"]
+bg_color = Color(0.6, 0.6, 0.6, 0.478431)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf5y8"]
+bg_color = Color(0.6, 0.6, 0.6, 0.478431)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tya4k"]
+shader = ExtResource("4_uxp0c")
+shader_parameter/lod = 1.717
+shader_parameter/mix_percentage = 0.191
+
+[node name="Initializer" type="Control" node_paths=PackedStringArray("InputPanels", "PlayerSlide", "PlayerCountLabel", "StartButton", "GraphicSetting", "fscreen", "VolumeDisplay", "AudioSlide", "SFXon", "OpenAudioPanel", "BlurbCheck", "BlurbMenu", "BlurbMenuOverlay", "BlurbBack", "BlurbList")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5o3n5")
+InputPanels = [NodePath("Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput1"), NodePath("Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput2"), NodePath("Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput3"), NodePath("Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput4"), NodePath("Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput5"), NodePath("Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput6"), NodePath("Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput7")]
+PlayerSlide = NodePath("Panel/VBoxContainer/HBoxContainer/VBoxContainer/PlayerCountPanel/VBoxContainer/HBoxContainer/HSlider")
+PlayerCountLabel = NodePath("Panel/VBoxContainer/HBoxContainer/VBoxContainer/PlayerCountPanel/VBoxContainer/HBoxContainer/Label2")
+StartButton = NodePath("Panel/VBoxContainer/HBoxContainer3/Panel/Beginning")
+GraphicSetting = NodePath("Panel/VBoxContainer/HBoxContainer/Graphics/VBoxContainer/OptionButton")
+fscreen = NodePath("Panel/VBoxContainer/HBoxContainer/Graphics/VBoxContainer/Fscreen")
+VolumeDisplay = NodePath("Panel/VBoxContainer/HBoxContainer/Audio/VBoxContainer/HBoxContainer/VolumeDisplay")
+AudioSlide = NodePath("Panel/VBoxContainer/HBoxContainer/Audio/VBoxContainer/HBoxContainer/VSlider")
+SFXon = NodePath("Panel/VBoxContainer/HBoxContainer/Audio/VBoxContainer/CheckBox")
+OpenAudioPanel = NodePath("Panel/VBoxContainer/HBoxContainer/Audio/VBoxContainer/Button")
+BlurbCheck = NodePath("Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel/HBoxContainer/CheckButton")
+BlurbMenu = NodePath("Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel/HBoxContainer/Button")
+BlurbMenuOverlay = NodePath("BackgroundBlur")
+BlurbBack = NodePath("BackgroundBlur/BlurbMenu/Button")
+BlurbList = [NodePath("BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit1"), NodePath("BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit2"), NodePath("BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit3"), NodePath("BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit4"), NodePath("BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit5"), NodePath("BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit6"), NodePath("BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit7")]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0121528
+anchor_top = 0.188272
+anchor_right = 0.987847
+anchor_bottom = 0.976852
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00711744
+anchor_top = 0.0144462
+anchor_right = 0.992883
+anchor_bottom = 0.985554
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+
+[node name="PlayerCountPanel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(295.245, 56.56)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_type_variation = &"Subpanel"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer/PlayerCountPanel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00731261
+anchor_top = 0.0368421
+anchor_right = 0.992687
+anchor_bottom = 0.963158
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer/PlayerCountPanel/VBoxContainer"]
+layout_mode = 2
+text = "Player Count"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer/PlayerCountPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer/PlayerCountPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 19
+text = "3"
+horizontal_alignment = 2
+
+[node name="HSlider" type="HSlider" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer/PlayerCountPanel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+size_flags_stretch_ratio = 1.99
+min_value = 1.0
+max_value = 7.0
+value = 3.0
+rounded = true
+tick_count = 7
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"Subpanel"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0166667
+anchor_top = 0.047619
+anchor_right = 0.983333
+anchor_bottom = 0.880952
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CheckButton" type="CheckButton" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+text = "Player Intro Blurbs"
+alignment = 1
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel/HBoxContainer"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+disabled = true
+text = "Write Blurbs"
+autowrap_mode = 2
+
+[node name="Graphics" type="Panel" parent="Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_type_variation = &"Subpanel"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Graphics"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = -7.0
+offset_bottom = -7.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Graphics/VBoxContainer"]
+layout_mode = 2
+text = "Graphics Settings"
+
+[node name="OptionButton" type="OptionButton" parent="Panel/VBoxContainer/HBoxContainer/Graphics/VBoxContainer"]
+layout_mode = 2
+selected = 0
+item_count = 2
+popup/item_0/text = "High"
+popup/item_0/id = 0
+popup/item_1/text = "Low"
+popup/item_1/id = 1
+
+[node name="Fscreen" type="CheckBox" parent="Panel/VBoxContainer/HBoxContainer/Graphics/VBoxContainer"]
+layout_mode = 2
+text = "Fullscreen"
+
+[node name="Audio" type="Panel" parent="Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_type_variation = &"Subpanel"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Audio"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0318182
+anchor_top = 0.0432432
+anchor_right = 0.968182
+anchor_bottom = 0.956757
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Audio/VBoxContainer"]
+layout_mode = 2
+text = "Audio Settings"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Audio/VBoxContainer"]
+layout_mode = 2
+
+[node name="VolumeDisplay" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Audio/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+text = "-db"
+vertical_alignment = 1
+
+[node name="VSlider" type="HSlider" parent="Panel/VBoxContainer/HBoxContainer/Audio/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 1
+min_value = -60.0
+max_value = 12.0
+tick_count = 5
+
+[node name="CheckBox" type="CheckBox" parent="Panel/VBoxContainer/HBoxContainer/Audio/VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "Buzzer Sound"
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer/HBoxContainer/Audio/VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "Custom Sounds"
+
+[node name="Set" type="Panel" parent="Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme_type_variation = &"Subpanel"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer/Set"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer/Set/VBoxContainer"]
+layout_mode = 2
+text = "Stage Settings"
+
+[node name="CheckBox" type="CheckBox" parent="Panel/VBoxContainer/HBoxContainer/Set/VBoxContainer"]
+layout_mode = 2
+disabled = true
+button_pressed = true
+text = "TV Screen"
+
+[node name="CheckBox2" type="CheckBox" parent="Panel/VBoxContainer/HBoxContainer/Set/VBoxContainer"]
+layout_mode = 2
+disabled = true
+text = "Big Curtain"
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GridContainer" type="GridContainer" parent="Panel/VBoxContainer/PanelContainer"]
+custom_minimum_size = Vector2(0, 193.42)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 7
+columns = 7
+
+[node name="PlayerInput1" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer" node_paths=PackedStringArray("TextInput", "PlayerImage", "MousePanel")]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"Subpanel"
+script = ExtResource("1_638en")
+ID = 1
+TextInput = NodePath("VBoxContainer/TextEdit")
+PlayerImage = NodePath("VBoxContainer/Panel/TextureRect")
+MousePanel = NodePath("VBoxContainer/Panel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput1/VBoxContainer"]
+custom_minimum_size = Vector2(0, 38.225)
+layout_mode = 2
+placeholder_text = "Name..."
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput1/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_uxp0c")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput1/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0298013
+anchor_top = 0.285714
+anchor_right = 0.976821
+anchor_bottom = 0.723214
+grow_horizontal = 2
+grow_vertical = 2
+text = "Drop Player Image Here"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput1/VBoxContainer/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+mouse_filter = 2
+texture = ExtResource("1_7ffih")
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput1/VBoxContainer"]
+layout_mode = 2
+text = "Player 1"
+
+[node name="PlayerInput2" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer" node_paths=PackedStringArray("TextInput", "PlayerImage", "MousePanel")]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_type_variation = &"Subpanel"
+script = ExtResource("1_638en")
+ID = 2
+TextInput = NodePath("VBoxContainer/TextEdit")
+PlayerImage = NodePath("VBoxContainer/Panel/TextureRect")
+MousePanel = NodePath("VBoxContainer/Panel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput2/VBoxContainer"]
+custom_minimum_size = Vector2(0, 38.225)
+layout_mode = 2
+placeholder_text = "Name..."
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_cqp4h")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput2/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0298013
+anchor_top = 0.285714
+anchor_right = 0.976821
+anchor_bottom = 0.723214
+grow_horizontal = 2
+grow_vertical = 2
+text = "Drop Player Image Here"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput2/VBoxContainer/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+mouse_filter = 2
+texture = ExtResource("1_7ffih")
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput2/VBoxContainer"]
+layout_mode = 2
+text = "Player 2"
+
+[node name="PlayerInput3" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer" node_paths=PackedStringArray("TextInput", "PlayerImage", "MousePanel")]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_type_variation = &"Subpanel"
+script = ExtResource("1_638en")
+ID = 3
+TextInput = NodePath("VBoxContainer/TextEdit")
+PlayerImage = NodePath("VBoxContainer/Panel/TextureRect")
+MousePanel = NodePath("VBoxContainer/Panel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput3/VBoxContainer"]
+custom_minimum_size = Vector2(0, 38.225)
+layout_mode = 2
+placeholder_text = "Name..."
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_tya4k")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput3/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0298013
+anchor_top = 0.285714
+anchor_right = 0.976821
+anchor_bottom = 0.723214
+grow_horizontal = 2
+grow_vertical = 2
+text = "Drop Player Image Here"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput3/VBoxContainer/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+mouse_filter = 2
+texture = ExtResource("1_7ffih")
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput3/VBoxContainer"]
+layout_mode = 2
+text = "Player 3"
+
+[node name="PlayerInput4" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer" node_paths=PackedStringArray("TextInput", "PlayerImage", "MousePanel")]
+visible = false
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_type_variation = &"Subpanel"
+script = ExtResource("1_638en")
+ID = 4
+TextInput = NodePath("VBoxContainer/TextEdit")
+PlayerImage = NodePath("VBoxContainer/Panel/TextureRect")
+MousePanel = NodePath("VBoxContainer/Panel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput4/VBoxContainer"]
+custom_minimum_size = Vector2(0, 38.225)
+layout_mode = 2
+placeholder_text = "Name..."
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput4/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_32amy")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput4/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0298013
+anchor_top = 0.285714
+anchor_right = 0.976821
+anchor_bottom = 0.723214
+grow_horizontal = 2
+grow_vertical = 2
+text = "Drop Player Image Here"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput4/VBoxContainer/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+mouse_filter = 2
+texture = ExtResource("1_7ffih")
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput4/VBoxContainer"]
+layout_mode = 2
+text = "Player 4"
+
+[node name="PlayerInput5" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer" node_paths=PackedStringArray("TextInput", "PlayerImage", "MousePanel")]
+visible = false
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_type_variation = &"Subpanel"
+script = ExtResource("1_638en")
+ID = 5
+TextInput = NodePath("VBoxContainer/TextEdit")
+PlayerImage = NodePath("VBoxContainer/Panel/TextureRect")
+MousePanel = NodePath("VBoxContainer/Panel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput5/VBoxContainer"]
+custom_minimum_size = Vector2(0, 38.225)
+layout_mode = 2
+placeholder_text = "Name..."
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput5/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_s8fmm")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput5/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0298013
+anchor_top = 0.285714
+anchor_right = 0.976821
+anchor_bottom = 0.723214
+grow_horizontal = 2
+grow_vertical = 2
+text = "Drop Player Image Here"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput5/VBoxContainer/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+mouse_filter = 2
+texture = ExtResource("1_7ffih")
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput5/VBoxContainer"]
+layout_mode = 2
+text = "Player 5"
+
+[node name="PlayerInput6" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer" node_paths=PackedStringArray("TextInput", "PlayerImage", "MousePanel")]
+visible = false
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_type_variation = &"Subpanel"
+script = ExtResource("1_638en")
+ID = 6
+TextInput = NodePath("VBoxContainer/TextEdit")
+PlayerImage = NodePath("VBoxContainer/Panel/TextureRect")
+MousePanel = NodePath("VBoxContainer/Panel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput6/VBoxContainer"]
+custom_minimum_size = Vector2(0, 38.225)
+layout_mode = 2
+placeholder_text = "Name..."
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput6/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_jcs1w")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput6/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0298013
+anchor_top = 0.285714
+anchor_right = 0.976821
+anchor_bottom = 0.723214
+grow_horizontal = 2
+grow_vertical = 2
+text = "Drop Player Image Here"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput6/VBoxContainer/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+mouse_filter = 2
+texture = ExtResource("1_7ffih")
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput6/VBoxContainer"]
+layout_mode = 2
+text = "Player 6"
+
+[node name="PlayerInput7" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer" node_paths=PackedStringArray("TextInput", "PlayerImage", "MousePanel")]
+visible = false
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_type_variation = &"Subpanel"
+script = ExtResource("1_638en")
+ID = 7
+TextInput = NodePath("VBoxContainer/TextEdit")
+PlayerImage = NodePath("VBoxContainer/Panel/TextureRect")
+MousePanel = NodePath("VBoxContainer/Panel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput7/VBoxContainer"]
+custom_minimum_size = Vector2(0, 38.225)
+layout_mode = 2
+placeholder_text = "Name..."
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput7/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_gf5y8")
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput7/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0328947
+anchor_top = 0.285714
+anchor_right = 0.973684
+anchor_bottom = 0.723214
+grow_horizontal = 2
+grow_vertical = 2
+text = "Drop Player Image Here"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput7/VBoxContainer/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+mouse_filter = 2
+texture = ExtResource("1_7ffih")
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput7/VBoxContainer"]
+layout_mode = 2
+text = "Player 7"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"Subpanel"
+
+[node name="Beginning" type="Button" parent="Panel/VBoxContainer/HBoxContainer3/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.358318
+anchor_top = 0.409357
+anchor_right = 0.641682
+anchor_bottom = 0.590643
+grow_horizontal = 2
+grow_vertical = 2
+text = "The Only Way To Begin Is By Beginning!"
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Panel/VBoxContainer/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+text = "Change Window Name"
+
+[node name="Windowname" type="TextEdit" parent="Panel/VBoxContainer/HBoxContainer3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+placeholder_text = "Window name..."
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.377604
+anchor_right = 0.622396
+anchor_bottom = 0.16821
+grow_horizontal = 2
+theme_type_variation = &"HeaderLarge"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "I Can't Believe Its Not Gamechanger!"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BackgroundBlur" type="TextureRect" parent="."]
+visible = false
+material = SubResource("ShaderMaterial_tya4k")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_cqp4h")
+metadata/_edit_use_anchors_ = true
+
+[node name="BlurbMenu" type="Panel" parent="BackgroundBlur"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.360243
+anchor_top = 0.222222
+anchor_right = 0.639757
+anchor_bottom = 0.777778
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Control" type="Control" parent="BackgroundBlur/BlurbMenu"]
+layout_mode = 1
+anchor_left = 0.00488599
+anchor_top = 0.0111111
+anchor_right = 0.995114
+anchor_bottom = 0.988889
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="ScrollContainer" type="ScrollContainer" parent="BackgroundBlur/BlurbMenu/Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.00940871
+anchor_right = 0.987914
+anchor_bottom = 0.999999
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+metadata/_edit_use_anchors_ = true
+
+[node name="BlurbEdit1" type="Panel" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("Name", "Tedit", "Initializer")]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme_type_variation = &"Subpanel"
+script = ExtResource("4_g2ykj")
+Name = NodePath("Name")
+Tedit = NodePath("TextEdit")
+Initializer = NodePath("../../../../../..")
+
+[node name="Name" type="Label" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit1"]
+layout_mode = 0
+anchor_left = 0.00763112
+anchor_top = 0.0222222
+anchor_right = 0.306373
+anchor_bottom = 0.277778
+text = "PlayerName"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextEdit" type="TextEdit" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit1"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0157233
+anchor_top = 0.277778
+anchor_right = 0.987421
+anchor_bottom = 0.922222
+placeholder_text = "Insert intro blurb here..."
+metadata/_edit_use_anchors_ = true
+
+[node name="BlurbEdit2" type="Panel" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("Name", "Tedit", "Initializer")]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme_type_variation = &"Subpanel"
+script = ExtResource("4_g2ykj")
+ID = 1
+Name = NodePath("Name")
+Tedit = NodePath("TextEdit")
+Initializer = NodePath("../../../../../..")
+
+[node name="Name" type="Label" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit2"]
+layout_mode = 0
+anchor_left = 0.00763112
+anchor_top = 0.0222222
+anchor_right = 0.306373
+anchor_bottom = 0.277778
+text = "PlayerName"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextEdit" type="TextEdit" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0157233
+anchor_top = 0.277778
+anchor_right = 0.987421
+anchor_bottom = 0.922222
+placeholder_text = "Insert intro blurb here..."
+metadata/_edit_use_anchors_ = true
+
+[node name="BlurbEdit3" type="Panel" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("Name", "Tedit", "Initializer")]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme_type_variation = &"Subpanel"
+script = ExtResource("4_g2ykj")
+ID = 2
+Name = NodePath("Name")
+Tedit = NodePath("TextEdit")
+Initializer = NodePath("../../../../../..")
+
+[node name="Name" type="Label" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit3"]
+layout_mode = 0
+anchor_left = 0.00763112
+anchor_top = 0.0222222
+anchor_right = 0.306373
+anchor_bottom = 0.277778
+text = "PlayerName"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextEdit" type="TextEdit" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0157233
+anchor_top = 0.277778
+anchor_right = 0.987421
+anchor_bottom = 0.922222
+placeholder_text = "Insert intro blurb here..."
+metadata/_edit_use_anchors_ = true
+
+[node name="BlurbEdit4" type="Panel" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("Name", "Tedit", "Initializer")]
+visible = false
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme_type_variation = &"Subpanel"
+script = ExtResource("4_g2ykj")
+ID = 3
+Name = NodePath("Name")
+Tedit = NodePath("TextEdit")
+Initializer = NodePath("../../../../../..")
+
+[node name="Name" type="Label" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit4"]
+layout_mode = 0
+anchor_left = 0.00763112
+anchor_top = 0.0222222
+anchor_right = 0.306373
+anchor_bottom = 0.277778
+text = "PlayerName"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextEdit" type="TextEdit" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit4"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0157233
+anchor_top = 0.277778
+anchor_right = 0.987421
+anchor_bottom = 0.922222
+placeholder_text = "Insert intro blurb here..."
+metadata/_edit_use_anchors_ = true
+
+[node name="BlurbEdit5" type="Panel" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("Name", "Tedit", "Initializer")]
+visible = false
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme_type_variation = &"Subpanel"
+script = ExtResource("4_g2ykj")
+ID = 4
+Name = NodePath("Name")
+Tedit = NodePath("TextEdit")
+Initializer = NodePath("../../../../../..")
+
+[node name="Name" type="Label" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit5"]
+layout_mode = 0
+anchor_left = 0.00763112
+anchor_top = 0.0222222
+anchor_right = 0.306373
+anchor_bottom = 0.277778
+text = "PlayerName"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextEdit" type="TextEdit" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit5"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0157233
+anchor_top = 0.277778
+anchor_right = 0.987421
+anchor_bottom = 0.922222
+placeholder_text = "Insert intro blurb here..."
+metadata/_edit_use_anchors_ = true
+
+[node name="BlurbEdit6" type="Panel" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("Name", "Tedit", "Initializer")]
+visible = false
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme_type_variation = &"Subpanel"
+script = ExtResource("4_g2ykj")
+ID = 5
+Name = NodePath("Name")
+Tedit = NodePath("TextEdit")
+Initializer = NodePath("../../../../../..")
+
+[node name="Name" type="Label" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit6"]
+layout_mode = 0
+anchor_left = 0.00763112
+anchor_top = 0.0222222
+anchor_right = 0.306373
+anchor_bottom = 0.277778
+text = "PlayerName"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextEdit" type="TextEdit" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit6"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0157233
+anchor_top = 0.277778
+anchor_right = 0.987421
+anchor_bottom = 0.922222
+placeholder_text = "Insert intro blurb here..."
+metadata/_edit_use_anchors_ = true
+
+[node name="BlurbEdit7" type="Panel" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("Name", "Tedit", "Initializer")]
+visible = false
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme_type_variation = &"Subpanel"
+script = ExtResource("4_g2ykj")
+ID = 6
+Name = NodePath("Name")
+Tedit = NodePath("TextEdit")
+Initializer = NodePath("../../../../../..")
+
+[node name="Name" type="Label" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit7"]
+layout_mode = 0
+anchor_left = 0.00763112
+anchor_top = 0.0222222
+anchor_right = 0.306373
+anchor_bottom = 0.277778
+text = "PlayerName"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextEdit" type="TextEdit" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit7"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0157233
+anchor_top = 0.277778
+anchor_right = 0.987421
+anchor_bottom = 0.922222
+placeholder_text = "Insert intro blurb here..."
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="BackgroundBlur/BlurbMenu"]
+layout_mode = 0
+anchor_top = -0.0805556
+anchor_right = 0.0749186
+anchor_bottom = -0.00555556
+text = " Back "
+metadata/_edit_use_anchors_ = true

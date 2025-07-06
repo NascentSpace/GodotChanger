@@ -1,0 +1,10 @@
+Figure out how to integrate discord, get a list of current players in an a VC. Get their profile images, and then add them to gamechanger.
+
+Players:
+	Lemon
+	Piers
+	Jodie
+	Micheal
+	Echo
+	Mace
+	Gefion
