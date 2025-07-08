@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://oggwgc5f35kb"]
+[gd_scene load_steps=39 format=3 uid="uid://oggwgc5f35kb"]
 
 [ext_resource type="Texture2D" uid="uid://c5iisb3575y8q" path="res://assets/textures/neon_photostudio_2k.hdr" id="1_3a866"]
 [ext_resource type="Script" uid="uid://mju0h2pfhtww" path="res://scenes/gameset.gd" id="1_vwgbe"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cbwru3y1pdjtq" path="res://assets/GamechangerPodiumNoSign.fbx" id="13_03s4m"]
 [ext_resource type="PackedScene" uid="uid://du8hd2llm13kq" path="res://scenes/television.tscn" id="14_tbuau"]
 [ext_resource type="Texture2D" uid="uid://cucmmeaqmde53" path="res://assets/textures/SammyBoy.png" id="15_sljls"]
+[ext_resource type="PackedScene" uid="uid://btyrffxf3y3bd" path="res://scenes/timer.tscn" id="17_3oigv"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_v401i"]
 panorama = ExtResource("1_3a866")
@@ -862,3 +863,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.28769, 2.14764, -3.99495)
 
 [node name="2" type="Node3D" parent="CameraPositions"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.223948, 1.95995, -9.11881)
+
+[node name="Timer" parent="." instance=ExtResource("17_3oigv")]

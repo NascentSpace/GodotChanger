@@ -76,7 +76,7 @@ func _process(delta: float) -> void:
 		
 	Cam.fov = lerpf(Cam.fov,targetfov,delta*3)
 
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("QUIT"):
 		get_tree().quit()
 

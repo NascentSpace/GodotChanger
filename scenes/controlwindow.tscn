@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cpe6mwti4oy3t" path="res://scenes/pcontrol_node.tscn" id="2_blgyc"]
 [ext_resource type="Theme" uid="uid://bprxr32atce1r" path="res://assets/Gamechanger_theme.tres" id="3_1pm0t"]
 
-[node name="Window" type="Window" node_paths=PackedStringArray("PlayerPanels", "StartButton", "AddPlayer", "SmoothCam", "LightsOn", "LightClr", "ScreenCam", "ScreenApply", "ScreenText", "TimerToggle", "Countdown", "TimerAmount", "StartTimer", "PauseTimer", "EndButton", "Camposb1", "Camposb2", "FOVLabel", "FOVSlider", "FOVReset")]
+[node name="Window" type="Window" node_paths=PackedStringArray("PlayerPanels", "StartButton", "AddPlayer", "SmoothCam", "LightsOn", "LightClr", "DiscoToggle", "ScreenCam", "ScreenApply", "ScreenText", "TimerToggle", "Countdown", "TimerAmount", "StartTimer", "PauseTimer", "EndButton", "Camposb1", "Camposb2", "FOVLabel", "FOVSlider", "FOVReset")]
 auto_translate_mode = 1
 title = "Control Panel"
 initial_position = 1
@@ -16,6 +16,7 @@ AddPlayer = NodePath("Control/VBoxContainer/Panel/HBoxContainer/VBoxContainer/Ad
 SmoothCam = NodePath("Control/VBoxContainer/Panel/HBoxContainer/VBoxContainer/CheckButton")
 LightsOn = NodePath("Control/VBoxContainer/Panel2/HBoxContainer/LightPanel/VBoxContainer/Button")
 LightClr = NodePath("Control/VBoxContainer/Panel2/HBoxContainer/LightPanel/VBoxContainer/ColorPickerButton")
+DiscoToggle = NodePath("Control/VBoxContainer/Panel2/HBoxContainer/LightPanel/VBoxContainer/DiscoLights")
 ScreenCam = NodePath("Control/VBoxContainer/Panel3/HBoxContainer/VBoxContainer/HBoxContainer/ScreenCam")
 ScreenApply = NodePath("Control/VBoxContainer/Panel2/HBoxContainer/Screen/ScreenApply")
 ScreenText = NodePath("Control/VBoxContainer/Panel2/HBoxContainer/Screen/TextEdit")
@@ -174,7 +175,7 @@ custom_minimum_size = Vector2(0, 26.825)
 layout_mode = 2
 color = Color(1, 1, 1, 1)
 
-[node name="Button2" type="CheckButton" parent="Control/VBoxContainer/Panel2/HBoxContainer/LightPanel/VBoxContainer"]
+[node name="DiscoLights" type="CheckButton" parent="Control/VBoxContainer/Panel2/HBoxContainer/LightPanel/VBoxContainer"]
 layout_mode = 2
 text = "Disco Lights"
 

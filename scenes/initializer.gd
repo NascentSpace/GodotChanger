@@ -37,7 +37,6 @@ func _ready() -> void:
 	BlurbBack.pressed.connect(_open_blurb_menu)
 	BlurbMenuOverlay.hide()
 	var BlurbList = get_tree().get_nodes_in_group("Blurbs")
-	
 
 #region Blurbs
 

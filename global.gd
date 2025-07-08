@@ -21,8 +21,11 @@ signal BadSound
 
 signal lightstoggled
 signal changelightclr
+signal discotoggled
 
 signal changefov
+
+signal timertoggle
 
 signal IntroPlayer
 signal RevealPlayer

@@ -8,6 +8,7 @@ extends Window
 
 @export var LightsOn : CheckButton
 @export var LightClr : ColorPickerButton
+@export var DiscoToggle : CheckButton
 
 @export var ScreenCam : Button
 @export var ScreenApply : Button
@@ -45,6 +46,10 @@ func _ready() -> void:
 	
 	LightsOn.toggled.connect(_toggle_lights)
 	LightClr.color_changed.connect(_light_clr_changed)
+	DiscoToggle.toggled.connect(_disco_mode)
+	#TODO Add functionality for disco lights
+	
+	TimerToggle.toggled.connect(_toggle_timer)
 	
 	FOVSlider.value_changed.connect(_fov_changed)
 	FOVReset.pressed.connect(_fov_changed.bind(42.0))
@@ -86,7 +91,13 @@ func _toggle_lights(switch):
 
 func _light_clr_changed(clr):
 	Global.changelightclr.emit(clr)
+	
+func _disco_mode(switch):
+	Global.discotoggled.emit(switch)
 
 func _fov_changed(FOV):
 	FOVLabel.text = str(FOV)
 	Global.changefov.emit(FOV)
+
+func _toggle_timer(switch):
+	Global.timertoggle.emit(switch)
