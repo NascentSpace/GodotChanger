@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://cw0x2autf0wcx"]
+
+[ext_resource type="Script" uid="uid://be6sxl4oop73d" path="res://scenes/winnerspodium.gd" id="1_py5ui"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6i5f7"]
+albedo_color = Color(0.197665, 0.663891, 0.881979, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_c4uo7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_syl6v"]
+albedo_color = Color(0.921297, 0.467802, 0.312578, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n7li2"]
+albedo_color = Color(0.771316, 0.580591, 0.190159, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_k3i4p"]
+
+[node name="Podium" type="Node3D" node_paths=PackedStringArray("first", "second", "third")]
+script = ExtResource("1_py5ui")
+first = NodePath("first")
+second = NodePath("second")
+third = NodePath("third")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.77212, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_6i5f7")
+mesh = SubResource("BoxMesh_c4uo7")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.77212, 0, 0, 0, 1, 1, -0.2, 0)
+material_override = SubResource("StandardMaterial3D_syl6v")
+mesh = SubResource("BoxMesh_c4uo7")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.77212, 0, 0, 0, 1, -1, -0.5, 0)
+material_override = SubResource("StandardMaterial3D_n7li2")
+mesh = SubResource("BoxMesh_c4uo7")
+
+[node name="first" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 1, 0, 1.59404, 0)
+mesh = SubResource("QuadMesh_k3i4p")
+
+[node name="third" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 1, -1, 1.09404, 0)
+mesh = SubResource("QuadMesh_k3i4p")
+
+[node name="second" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 1, 1, 1.39404, 0)
+mesh = SubResource("QuadMesh_k3i4p")

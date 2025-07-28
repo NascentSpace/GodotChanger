@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://m2snj6jd23a8"]
+
+[ext_resource type="Script" uid="uid://ntx0ihk3ukcp" path="res://scenes/player_input.gd" id="1_65u6c"]
+[ext_resource type="Texture2D" uid="uid://cbbugqmapb34h" path="res://assets/textures/hello.png" id="2_22qh8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uxp0c"]
+bg_color = Color(0.6, 0.6, 0.6, 0.478431)
+
+[node name="PlayerInput1" type="Panel" node_paths=PackedStringArray("namelabel", "TextInput", "PlayerImage", "MousePanel")]
+custom_minimum_size = Vector2(130, 0)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+theme_type_variation = &"Subpanel"
+script = ExtResource("1_65u6c")
+ID = 1
+namelabel = NodePath("VBoxContainer/Label")
+TextInput = NodePath("VBoxContainer/TextEdit")
+PlayerImage = NodePath("VBoxContainer/Panel/TextureRect")
+MousePanel = NodePath("VBoxContainer/Panel")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 38.225)
+layout_mode = 2
+placeholder_text = "Name..."
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_uxp0c")
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0298013
+anchor_top = 0.285714
+anchor_right = 0.976821
+anchor_bottom = 0.723214
+grow_horizontal = 2
+grow_vertical = 2
+text = "Drop Player Image Here"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Panel"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 6
+mouse_filter = 2
+texture = ExtResource("2_22qh8")
+expand_mode = 3
+stretch_mode = 5
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Player 1"

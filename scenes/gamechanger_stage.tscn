@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://daotmeitafxcg"]
+[gd_scene load_steps=11 format=3 uid="uid://daotmeitafxcg"]
 
 [ext_resource type="PackedScene" uid="uid://dlu0jn125afwn" path="res://assets/GamechangerStage.fbx" id="1_e7dpx"]
 [ext_resource type="Texture2D" uid="uid://ditsunbnpvx06" path="res://assets/textures/diffuse.png" id="2_htbrm"]
 [ext_resource type="Texture2D" uid="uid://cp4wqjb113nm1" path="res://assets/textures/height.png" id="3_ho53y"]
 [ext_resource type="Texture2D" uid="uid://dsmwaw6xayfrp" path="res://assets/textures/normal.png" id="4_bcxak"]
+[ext_resource type="Texture2D" uid="uid://r510q3ul72ep" path="res://assets/textures/gcbg.png" id="5_htbrm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jm230"]
 albedo_texture = ExtResource("2_htbrm")
@@ -13,7 +14,85 @@ heightmap_enabled = true
 heightmap_scale = 1.929
 heightmap_texture = ExtResource("3_ho53y")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_htbrm"]
+resource_name = "Orange"
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.90634, 0.646221, 0.21128, 1)
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ho53y"]
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 3.46
+
+[sub_resource type="QuadMesh" id="QuadMesh_ho53y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bcxak"]
+transparency = 1
+albedo_texture = ExtResource("5_htbrm")
+
 [node name="GamechangerStage" instance=ExtResource("1_e7dpx")]
 
 [node name="Plane" parent="." index="0"]
 surface_material_override/1 = SubResource("StandardMaterial3D_jm230")
+surface_material_override/2 = SubResource("StandardMaterial3D_htbrm")
+surface_material_override/3 = SubResource("StandardMaterial3D_ho53y")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(-3.53756e-07, 0, -1, 0, 6.639, 0, 8.093, 0, -4.37114e-08, 4.20521, 2.58859, -4.10808)
+mesh = SubResource("QuadMesh_ho53y")
+surface_material_override/0 = SubResource("StandardMaterial3D_bcxak")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." index="3"]
+transform = Transform3D(-8.093, 0, 8.74228e-08, 0, 5.75254, 0, -7.07512e-07, 0, -1, -2.77127, 2.4339, 3.97385)
+mesh = SubResource("QuadMesh_ho53y")
+surface_material_override/0 = SubResource("StandardMaterial3D_bcxak")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." index="4"]
+transform = Transform3D(-8.093, 5.02903e-07, -8.74228e-08, -7.07512e-07, -5.75254, -7.64274e-15, 7.07512e-07, 0, -1, -2.77127, 8.16414, 3.97385)
+mesh = SubResource("QuadMesh_ho53y")
+surface_material_override/0 = SubResource("StandardMaterial3D_bcxak")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." index="5" groups=["Lights"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.11169, 1.34866, 0.915102)
+spot_range = 3.159
+spot_attenuation = 0.14
+spot_angle = 82.55
+spot_angle_attenuation = 0.267944
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="." index="6" groups=["Lights"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.11169, 3.40566, 0.915102)
+spot_range = 3.159
+spot_attenuation = 0.14
+spot_angle = 82.55
+spot_angle_attenuation = 0.267944
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="." index="7" groups=["Lights"]]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.11169, 5.4973, -1.67465)
+spot_range = 3.159
+spot_attenuation = 0.14
+spot_angle = 82.55
+spot_angle_attenuation = 0.267944
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="." index="8" groups=["Lights"]]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.11169, 5.4973, -4.33477)
+spot_range = 3.159
+spot_attenuation = 0.14
+spot_angle = 82.55
+spot_angle_attenuation = 0.267944
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="." index="9" groups=["Lights"]]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.11169, 5.4973, -6.6272)
+spot_range = 3.159
+spot_attenuation = 0.14
+spot_angle = 82.55
+spot_angle_attenuation = 0.267944
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="." index="10" groups=["Lights"]]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 4.11169, 5.4973, -9.00499)
+spot_range = 3.159
+spot_attenuation = 0.14
+spot_angle = 82.55
+spot_angle_attenuation = 0.267944

@@ -9,12 +9,12 @@ extends Node3D
 @export var AmbientMusic : AudioStream
 @export var GoodDing : AudioStream
 @export var BadDing : AudioStream
-@export var Cam : Camera3D
 
 @export var Env : WorldEnvironment
 @export var TempProfile : MeshInstance3D
 @export var Host : MeshInstance3D
 
+@export var Cam : Camera3D
 @export var Target : Node3D
 var smooth_rotation : Vector3
 @export var CamPositions : Array[Node3D]
@@ -56,6 +56,7 @@ func _ready() -> void:
 	Players = Global.player_count
 	_add_podiums()
 	LightList = get_tree().get_nodes_in_group("Lights")
+	_toggle_lights(false)
 
 func _set_graphics():
 	Env.environment.fog_enabled = false
@@ -66,15 +67,43 @@ func _set_graphics():
 	Env.environment.ssr_enabled = false
 	Env.environment.sdfgi_enabled = false
 	$GPUParticles3D.amount = 500
-	
 
-#FIXME smoothcam snapping
+#region Camera
+
+#Change where the camera is
+func _cam_position_change(mark):
+	campos = CamPositions[mark].global_position
+	_update_cam_position()
+	smooth_rotation = Target.rotation
+	print("camposition changed")
+	print("camera rotation " + str(Cam.global_rotation))
+	print("target rotation " + str(Target.rotation))
+
+#Change what the camera is looking towards
+func _camera_trans(mark):
+	print("camera target changed")
+	if mark <= 8:
+		camtarget = PodiumList[mark-1].global_position + Vector3(0,1.7,0)
+	else:
+		match mark:
+			9:
+				camtarget = $Television.global_position
+			10:
+				camtarget = $GamechangerPodiumNoSign/Host.global_position
+	_update_cam_position()
+
+func _update_cam_position():
+	Target.look_at_from_position(campos,camtarget,Vector3.UP)
+	Cam.look_at_from_position(campos,camtarget,Vector3.UP)
+
 func _process(delta: float) -> void:
 	if Global.Smoothcam:
 		smooth_rotation = smooth_rotation.lerp(Target.rotation, delta * 5)
 		Cam.global_rotation = smooth_rotation
 		
 	Cam.fov = lerpf(Cam.fov,targetfov,delta*3)
+
+#endregion Camera
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("QUIT"):
@@ -99,11 +128,12 @@ func _add_podiums():
 
 func _opener():
 	var mat = StandardMaterial3D.new()
+	mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 	mat.albedo_texture = Global.HostPFP
 	Host.set_surface_override_material(0,mat)
 	Music.stream = IntroSong
 	Music.play()
-	Anim.speed_scale = 3.0
+	Anim.speed_scale = 1.0
 	Anim.play("Intro")
 
 func _good_sound():
@@ -147,23 +177,6 @@ func _ending():
 	$GPUParticles3D.emitting = true
 	Music.stream = OutroSong
 	Music.play()
-
-func _cam_position_change(mark):
-	campos = CamPositions[mark].global_position
-	_update_cam_position()
-
-func _camera_trans(mark):
-	if mark <= 7:
-		camtarget = PodiumList[mark-1].global_position + Vector3(0,1.5,0)
-	else:
-		match mark:
-			8:
-				camtarget = $Television.global_position
-	_update_cam_position()
-
-func _update_cam_position():
-	Target.look_at_from_position(campos,camtarget,Vector3.UP)
-	Cam.look_at_from_position(campos,camtarget,Vector3.UP)
 
 func _toggle_lights(switch):
 	for lights in LightList:

@@ -19,6 +19,7 @@ func _update(eID, score):
 func _add_profile():
 	if players_left_to_reveal <= ID:
 		var mat = StandardMaterial3D.new()
+		mat.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
 		mat.albedo_texture = Global.playerpics[ID-1]
 		Profile.set_surface_override_material(0,mat)
 		Profile.show()

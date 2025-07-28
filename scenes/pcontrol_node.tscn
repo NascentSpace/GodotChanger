@@ -7,10 +7,11 @@
 [node name="PlayerControl1" type="VBoxContainer" node_paths=PackedStringArray("Nametag", "Tedit", "Plus", "Minus", "Pic")]
 custom_minimum_size = Vector2(80, 200)
 anchors_preset = -1
-anchor_right = 0.0694444
-anchor_bottom = 0.214506
-offset_right = -80.0
-offset_bottom = -139.0
+anchor_right = 0.134549
+anchor_bottom = 0.516975
+offset_bottom = -3.05176e-05
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_k8y8p")
 Nametag = NodePath("Button")
 Tedit = NodePath("LineEdit")
@@ -24,6 +25,7 @@ metadata/_edit_use_anchors_ = true
 custom_minimum_size = Vector2(80, 80)
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 1.5
 
 [node name="TextureRect" type="TextureRect" parent="Panel"]
 layout_mode = 1
@@ -35,18 +37,22 @@ anchor_bottom = 0.9625
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_2xjnc")
-expand_mode = 5
+expand_mode = 3
+stretch_mode = 6
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.3
 theme = ExtResource("3_nfowq")
-text = "Elizabethaa"
+text = "Elizabeth"
 text_overrun_behavior = 3
 
 [node name="LineEdit" type="LineEdit" parent="."]
 layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
 placeholder_text = "Score..."
 alignment = 1
 max_length = 4
@@ -54,17 +60,22 @@ max_length = 4
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
 
 [node name="Button" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
 theme_override_colors/font_color = Color(0, 0.807843, 0, 1)
+theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 24
 text = "+"
 
 [node name="Button2" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.5
 theme_override_colors/font_color = Color(0.909804, 0.219608, 0.219608, 1)
+theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 24
 text = "—"

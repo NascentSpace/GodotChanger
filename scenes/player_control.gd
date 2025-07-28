@@ -18,6 +18,18 @@ func _ready() -> void:
 	Nametag.text = Global.playernames[ID-1]
 	Pic.texture = Global.playerpics[ID-1]
 	Global.ControlPanelUnlock.connect(_unlock)
+	Global.Ending.connect(_count_scores)
+
+func _input(event: InputEvent) -> void:
+	var num_just_pressed : int = 0
+	if event is InputEventKey:
+		if event.pressed and event.physical_keycode >= KEY_0 and event.physical_keycode <= KEY_9:
+			num_just_pressed = (event.physical_keycode - KEY_0)
+	if num_just_pressed == ID:
+		if Input.is_action_pressed("shift"):
+			_minus()
+		elif Input.is_action_just_pressed("ctrl"):
+			_plus()
 
 func _unlock():
 	Nametag.disabled = false
@@ -42,3 +54,6 @@ func _score_change():
 
 func _camswitch():
 	Global.SwitchCamera.emit(ID)
+
+func _count_scores():
+	Global.Scoreboard[ID-1] = score

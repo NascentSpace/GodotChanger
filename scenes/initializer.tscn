@@ -1,47 +1,27 @@
-[gd_scene load_steps=15 format=3 uid="uid://pglnvrs41j5v"]
+[gd_scene load_steps=7 format=3 uid="uid://pglnvrs41j5v"]
 
 [ext_resource type="Script" uid="uid://7sqqnhucc326" path="res://scenes/initializer.gd" id="1_5o3n5"]
-[ext_resource type="Texture2D" uid="uid://cbbugqmapb34h" path="res://assets/textures/hello.png" id="1_7ffih"]
-[ext_resource type="Script" uid="uid://ntx0ihk3ukcp" path="res://scenes/player_input.gd" id="1_638en"]
+[ext_resource type="PackedScene" uid="uid://m2snj6jd23a8" path="res://scenes/player_initial_input.tscn" id="2_7obbb"]
 [ext_resource type="Script" uid="uid://bhih1fe8oyv01" path="res://scenes/blurb_edit.gd" id="4_g2ykj"]
 [ext_resource type="Shader" uid="uid://t724nuepxcx5" path="res://assets/blur.gdshader" id="4_uxp0c"]
 [ext_resource type="Texture2D" uid="uid://ds40v4lhqeh4q" path="res://icon.svg" id="5_cqp4h"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uxp0c"]
-bg_color = Color(0.6, 0.6, 0.6, 0.478431)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cqp4h"]
-bg_color = Color(0.6, 0.6, 0.6, 0.478431)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tya4k"]
-bg_color = Color(0.6, 0.6, 0.6, 0.478431)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_32amy"]
-bg_color = Color(0.6, 0.6, 0.6, 0.478431)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s8fmm"]
-bg_color = Color(0.6, 0.6, 0.6, 0.478431)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jcs1w"]
-bg_color = Color(0.6, 0.6, 0.6, 0.478431)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gf5y8"]
-bg_color = Color(0.6, 0.6, 0.6, 0.478431)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tya4k"]
 shader = ExtResource("4_uxp0c")
 shader_parameter/lod = 1.717
 shader_parameter/mix_percentage = 0.191
 
-[node name="Initializer" type="Control" node_paths=PackedStringArray("InputPanels", "PlayerSlide", "PlayerCountLabel", "StartButton", "GraphicSetting", "fscreen", "VolumeDisplay", "AudioSlide", "SFXon", "OpenAudioPanel", "BlurbCheck", "BlurbMenu", "BlurbMenuOverlay", "BlurbBack", "BlurbList")]
+[node name="Initializer" type="Control" node_paths=PackedStringArray("InputPanels", "PlayerSlide", "PlayerCountLabel", "StartButton", "GraphicSetting", "fscreen", "VolumeDisplay", "AudioSlide", "SFXon", "OpenAudioPanel", "BlurbCheck", "BlurbMenu", "BlurbMenuOverlay", "BlurbBack", "BlurbList", "WindowName", "WindowNameButton")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_5o3n5")
-InputPanels = [NodePath("Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput1"), NodePath("Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput2"), NodePath("Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput3"), NodePath("Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput4"), NodePath("Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput5"), NodePath("Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput6"), NodePath("Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput7")]
+InputPanels = [NodePath("Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput1"), NodePath("Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput2"), NodePath("Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput3"), NodePath("Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput4"), NodePath("Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput5"), NodePath("Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput6"), NodePath("Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput7"), NodePath("Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput8")]
 PlayerSlide = NodePath("Panel/VBoxContainer/HBoxContainer/VBoxContainer/PlayerCountPanel/VBoxContainer/HBoxContainer/HSlider")
 PlayerCountLabel = NodePath("Panel/VBoxContainer/HBoxContainer/VBoxContainer/PlayerCountPanel/VBoxContainer/HBoxContainer/Label2")
 StartButton = NodePath("Panel/VBoxContainer/HBoxContainer3/Panel/Beginning")
@@ -55,7 +35,10 @@ BlurbCheck = NodePath("Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel/HBo
 BlurbMenu = NodePath("Panel/VBoxContainer/HBoxContainer/VBoxContainer/Panel/HBoxContainer/Button")
 BlurbMenuOverlay = NodePath("BackgroundBlur")
 BlurbBack = NodePath("BackgroundBlur/BlurbMenu/Button")
-BlurbList = [NodePath("BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit1"), NodePath("BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit2"), NodePath("BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit3"), NodePath("BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit4"), NodePath("BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit5"), NodePath("BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit6"), NodePath("BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit7")]
+BlurbList = [NodePath("BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit1"), NodePath("BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit2"), NodePath("BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit3"), NodePath("BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit4"), NodePath("BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit5"), NodePath("BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit6"), NodePath("BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit7"), NodePath("BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit8")]
+WindowName = NodePath("Panel/VBoxContainer/HBoxContainer3/VBoxContainer/Windowname")
+WindowNameButton = NodePath("Panel/VBoxContainer/HBoxContainer3/VBoxContainer/WindowButton")
+metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -64,15 +47,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-metadata/_edit_use_anchors_ = true
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.0121528
-anchor_top = 0.188272
-anchor_right = 0.987847
-anchor_bottom = 0.976852
+anchor_left = 0.0078125
+anchor_top = 0.174383
+anchor_right = 0.992188
+anchor_bottom = 0.990741
 grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
@@ -132,10 +114,10 @@ size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 1.99
 min_value = 1.0
-max_value = 7.0
+max_value = 8.0
 value = 3.0
 rounded = true
-tick_count = 7
+tick_count = 8
 
 [node name="Panel" type="Panel" parent="Panel/VBoxContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
@@ -191,7 +173,7 @@ text = "Graphics Settings"
 
 [node name="OptionButton" type="OptionButton" parent="Panel/VBoxContainer/HBoxContainer/Graphics/VBoxContainer"]
 layout_mode = 2
-selected = 0
+selected = 1
 item_count = 2
 popup/item_0/text = "High"
 popup/item_0/id = 0
@@ -293,446 +275,43 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/h_separation = 7
-columns = 7
+columns = 8
 
-[node name="PlayerInput1" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer" node_paths=PackedStringArray("TextInput", "PlayerImage", "MousePanel")]
-custom_minimum_size = Vector2(150, 0)
+[node name="PlayerInput1" parent="Panel/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("2_7obbb")]
 layout_mode = 2
-size_flags_vertical = 3
-theme_type_variation = &"Subpanel"
-script = ExtResource("1_638en")
-ID = 1
-TextInput = NodePath("VBoxContainer/TextEdit")
-PlayerImage = NodePath("VBoxContainer/Panel/TextureRect")
-MousePanel = NodePath("VBoxContainer/Panel")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput1"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextEdit" type="TextEdit" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput1/VBoxContainer"]
-custom_minimum_size = Vector2(0, 38.225)
+[node name="PlayerInput2" parent="Panel/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("2_7obbb")]
 layout_mode = 2
-placeholder_text = "Name..."
-
-[node name="Panel" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput1/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_uxp0c")
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput1/VBoxContainer/Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0298013
-anchor_top = 0.285714
-anchor_right = 0.976821
-anchor_bottom = 0.723214
-grow_horizontal = 2
-grow_vertical = 2
-text = "Drop Player Image Here"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput1/VBoxContainer/Panel"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 6
-mouse_filter = 2
-texture = ExtResource("1_7ffih")
-expand_mode = 3
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput1/VBoxContainer"]
-layout_mode = 2
-text = "Player 1"
-
-[node name="PlayerInput2" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer" node_paths=PackedStringArray("TextInput", "PlayerImage", "MousePanel")]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-theme_type_variation = &"Subpanel"
-script = ExtResource("1_638en")
 ID = 2
-TextInput = NodePath("VBoxContainer/TextEdit")
-PlayerImage = NodePath("VBoxContainer/Panel/TextureRect")
-MousePanel = NodePath("VBoxContainer/Panel")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput2"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextEdit" type="TextEdit" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput2/VBoxContainer"]
-custom_minimum_size = Vector2(0, 38.225)
+[node name="PlayerInput3" parent="Panel/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("2_7obbb")]
 layout_mode = 2
-placeholder_text = "Name..."
-
-[node name="Panel" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput2/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_cqp4h")
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput2/VBoxContainer/Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0298013
-anchor_top = 0.285714
-anchor_right = 0.976821
-anchor_bottom = 0.723214
-grow_horizontal = 2
-grow_vertical = 2
-text = "Drop Player Image Here"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput2/VBoxContainer/Panel"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 6
-mouse_filter = 2
-texture = ExtResource("1_7ffih")
-expand_mode = 3
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput2/VBoxContainer"]
-layout_mode = 2
-text = "Player 2"
-
-[node name="PlayerInput3" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer" node_paths=PackedStringArray("TextInput", "PlayerImage", "MousePanel")]
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-theme_type_variation = &"Subpanel"
-script = ExtResource("1_638en")
 ID = 3
-TextInput = NodePath("VBoxContainer/TextEdit")
-PlayerImage = NodePath("VBoxContainer/Panel/TextureRect")
-MousePanel = NodePath("VBoxContainer/Panel")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput3"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextEdit" type="TextEdit" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput3/VBoxContainer"]
-custom_minimum_size = Vector2(0, 38.225)
-layout_mode = 2
-placeholder_text = "Name..."
-
-[node name="Panel" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput3/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_tya4k")
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput3/VBoxContainer/Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0298013
-anchor_top = 0.285714
-anchor_right = 0.976821
-anchor_bottom = 0.723214
-grow_horizontal = 2
-grow_vertical = 2
-text = "Drop Player Image Here"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput3/VBoxContainer/Panel"]
+[node name="PlayerInput4" parent="Panel/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("2_7obbb")]
 visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 6
-mouse_filter = 2
-texture = ExtResource("1_7ffih")
-expand_mode = 3
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput3/VBoxContainer"]
 layout_mode = 2
-text = "Player 3"
-
-[node name="PlayerInput4" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer" node_paths=PackedStringArray("TextInput", "PlayerImage", "MousePanel")]
-visible = false
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-theme_type_variation = &"Subpanel"
-script = ExtResource("1_638en")
 ID = 4
-TextInput = NodePath("VBoxContainer/TextEdit")
-PlayerImage = NodePath("VBoxContainer/Panel/TextureRect")
-MousePanel = NodePath("VBoxContainer/Panel")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput4"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextEdit" type="TextEdit" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput4/VBoxContainer"]
-custom_minimum_size = Vector2(0, 38.225)
-layout_mode = 2
-placeholder_text = "Name..."
-
-[node name="Panel" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput4/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_32amy")
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput4/VBoxContainer/Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0298013
-anchor_top = 0.285714
-anchor_right = 0.976821
-anchor_bottom = 0.723214
-grow_horizontal = 2
-grow_vertical = 2
-text = "Drop Player Image Here"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput4/VBoxContainer/Panel"]
+[node name="PlayerInput5" parent="Panel/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("2_7obbb")]
 visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 6
-mouse_filter = 2
-texture = ExtResource("1_7ffih")
-expand_mode = 3
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput4/VBoxContainer"]
 layout_mode = 2
-text = "Player 4"
-
-[node name="PlayerInput5" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer" node_paths=PackedStringArray("TextInput", "PlayerImage", "MousePanel")]
-visible = false
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-theme_type_variation = &"Subpanel"
-script = ExtResource("1_638en")
 ID = 5
-TextInput = NodePath("VBoxContainer/TextEdit")
-PlayerImage = NodePath("VBoxContainer/Panel/TextureRect")
-MousePanel = NodePath("VBoxContainer/Panel")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput5"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextEdit" type="TextEdit" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput5/VBoxContainer"]
-custom_minimum_size = Vector2(0, 38.225)
-layout_mode = 2
-placeholder_text = "Name..."
-
-[node name="Panel" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput5/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_s8fmm")
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput5/VBoxContainer/Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0298013
-anchor_top = 0.285714
-anchor_right = 0.976821
-anchor_bottom = 0.723214
-grow_horizontal = 2
-grow_vertical = 2
-text = "Drop Player Image Here"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput5/VBoxContainer/Panel"]
+[node name="PlayerInput6" parent="Panel/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("2_7obbb")]
 visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 6
-mouse_filter = 2
-texture = ExtResource("1_7ffih")
-expand_mode = 3
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput5/VBoxContainer"]
 layout_mode = 2
-text = "Player 5"
-
-[node name="PlayerInput6" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer" node_paths=PackedStringArray("TextInput", "PlayerImage", "MousePanel")]
-visible = false
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-theme_type_variation = &"Subpanel"
-script = ExtResource("1_638en")
 ID = 6
-TextInput = NodePath("VBoxContainer/TextEdit")
-PlayerImage = NodePath("VBoxContainer/Panel/TextureRect")
-MousePanel = NodePath("VBoxContainer/Panel")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput6"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextEdit" type="TextEdit" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput6/VBoxContainer"]
-custom_minimum_size = Vector2(0, 38.225)
-layout_mode = 2
-placeholder_text = "Name..."
-
-[node name="Panel" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput6/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_jcs1w")
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput6/VBoxContainer/Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0298013
-anchor_top = 0.285714
-anchor_right = 0.976821
-anchor_bottom = 0.723214
-grow_horizontal = 2
-grow_vertical = 2
-text = "Drop Player Image Here"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput6/VBoxContainer/Panel"]
+[node name="PlayerInput7" parent="Panel/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("2_7obbb")]
 visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 6
-mouse_filter = 2
-texture = ExtResource("1_7ffih")
-expand_mode = 3
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput6/VBoxContainer"]
 layout_mode = 2
-text = "Player 6"
-
-[node name="PlayerInput7" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer" node_paths=PackedStringArray("TextInput", "PlayerImage", "MousePanel")]
-visible = false
-custom_minimum_size = Vector2(150, 0)
-layout_mode = 2
-theme_type_variation = &"Subpanel"
-script = ExtResource("1_638en")
 ID = 7
-TextInput = NodePath("VBoxContainer/TextEdit")
-PlayerImage = NodePath("VBoxContainer/Panel/TextureRect")
-MousePanel = NodePath("VBoxContainer/Panel")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput7"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextEdit" type="TextEdit" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput7/VBoxContainer"]
-custom_minimum_size = Vector2(0, 38.225)
-layout_mode = 2
-placeholder_text = "Name..."
-
-[node name="Panel" type="Panel" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput7/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxFlat_gf5y8")
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput7/VBoxContainer/Panel"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.0328947
-anchor_top = 0.285714
-anchor_right = 0.973684
-anchor_bottom = 0.723214
-grow_horizontal = 2
-grow_vertical = 2
-text = "Drop Player Image Here"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-metadata/_edit_use_anchors_ = true
-
-[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput7/VBoxContainer/Panel"]
+[node name="PlayerInput8" parent="Panel/VBoxContainer/PanelContainer/GridContainer" instance=ExtResource("2_7obbb")]
 visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_vertical = 6
-mouse_filter = 2
-texture = ExtResource("1_7ffih")
-expand_mode = 3
-stretch_mode = 5
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="Panel/VBoxContainer/PanelContainer/GridContainer/PlayerInput7/VBoxContainer"]
 layout_mode = 2
-text = "Player 7"
+ID = 8
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
@@ -758,13 +337,14 @@ metadata/_edit_use_anchors_ = true
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
 
-[node name="Button" type="Button" parent="Panel/VBoxContainer/HBoxContainer3/VBoxContainer"]
+[node name="WindowButton" type="Button" parent="Panel/VBoxContainer/HBoxContainer3/VBoxContainer"]
 layout_mode = 2
 text = "Change Window Name"
 
-[node name="Windowname" type="TextEdit" parent="Panel/VBoxContainer/HBoxContainer3/VBoxContainer"]
+[node name="Windowname" type="LineEdit" parent="Panel/VBoxContainer/HBoxContainer3/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+text = "GodotChanger"
 placeholder_text = "Window name..."
 
 [node name="Label" type="Label" parent="."]
@@ -1027,6 +607,36 @@ text = "PlayerName"
 metadata/_edit_use_anchors_ = true
 
 [node name="TextEdit" type="TextEdit" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit7"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0157233
+anchor_top = 0.277778
+anchor_right = 0.987421
+anchor_bottom = 0.922222
+placeholder_text = "Insert intro blurb here..."
+metadata/_edit_use_anchors_ = true
+
+[node name="BlurbEdit8" type="Panel" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer" node_paths=PackedStringArray("Name", "Tedit", "Initializer")]
+visible = false
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme_type_variation = &"Subpanel"
+script = ExtResource("4_g2ykj")
+ID = 7
+Name = NodePath("Name")
+Tedit = NodePath("TextEdit")
+Initializer = NodePath("../../../../../..")
+
+[node name="Name" type="Label" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit8"]
+layout_mode = 0
+anchor_left = 0.00763112
+anchor_top = 0.0222222
+anchor_right = 0.306373
+anchor_bottom = 0.277778
+text = "PlayerName"
+metadata/_edit_use_anchors_ = true
+
+[node name="TextEdit" type="TextEdit" parent="BackgroundBlur/BlurbMenu/Control/ScrollContainer/VBoxContainer/BlurbEdit8"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.0157233

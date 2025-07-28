@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://du8hd2llm13kq"]
+[gd_scene load_steps=7 format=3 uid="uid://du8hd2llm13kq"]
 
 [ext_resource type="PackedScene" uid="uid://csir7q05j2xx8" path="res://assets/Television.fbx" id="1_ccm7p"]
 [ext_resource type="Texture2D" uid="uid://cbbugqmapb34h" path="res://assets/textures/hello.png" id="2_3fxiq"]
@@ -11,6 +11,9 @@ viewport_path = NodePath("Cube_002/SubViewport")
 resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_3fxiq")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p7rhp"]
+albedo_color = Color(0.140523, 0.380299, 0.684233, 1)
+
 [node name="Television" node_paths=PackedStringArray("Text", "DisplayImage", "Background") instance=ExtResource("1_ccm7p")]
 script = ExtResource("2_qcggj")
 Text = NodePath("Cube_002/SubViewport/Label")
@@ -19,9 +22,11 @@ Background = NodePath("Cube_002/SubViewport/Bg")
 
 [node name="Cube_002" parent="." index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_qcggj")
+surface_material_override/1 = SubResource("StandardMaterial3D_p7rhp")
 
 [node name="SubViewport" type="SubViewport" parent="Cube_002" index="0"]
 handle_input_locally = false
+size = Vector2i(1024, 1024)
 render_target_update_mode = 4
 
 [node name="Bg" type="ColorRect" parent="Cube_002/SubViewport" index="0"]
@@ -42,7 +47,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 60
 text = "Get Ready For A Game Changer!"
 horizontal_alignment = 1
 vertical_alignment = 1

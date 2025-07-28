@@ -5,5 +5,5 @@
 
 [node name="Global" type="Node"]
 script = ExtResource("1_4pk28")
-playerpics = [ExtResource("2_nmxvb"), ExtResource("2_nmxvb"), ExtResource("2_nmxvb"), ExtResource("2_nmxvb"), ExtResource("2_nmxvb"), ExtResource("2_nmxvb"), ExtResource("2_nmxvb")]
-playernames = Array[String](["PlaceHolder", "PlaceHolder", "PlaceHolder", "PlaceHolder", "PlaceHolder", "PlaceHolder", "PlaceHolder"])
+playerpics = Array[Texture]([ExtResource("2_nmxvb"), ExtResource("2_nmxvb"), ExtResource("2_nmxvb"), ExtResource("2_nmxvb"), ExtResource("2_nmxvb"), ExtResource("2_nmxvb"), ExtResource("2_nmxvb"), ExtResource("2_nmxvb")])
+playernames = Array[String](["PlaceHolder", "PlaceHolder", "PlaceHolder", "PlaceHolder", "PlaceHolder", "PlaceHolder", "PlaceHolder", "PlaceHolder"])

@@ -21,6 +21,9 @@ extends Control
 @export var BlurbBack : Button
 @export var BlurbList : Array[Panel]
 
+@export var WindowName : LineEdit
+@export var WindowNameButton : Button
+
 signal UpdateBlurbs
 
 func _ready() -> void:
@@ -37,6 +40,9 @@ func _ready() -> void:
 	BlurbBack.pressed.connect(_open_blurb_menu)
 	BlurbMenuOverlay.hide()
 	var BlurbList = get_tree().get_nodes_in_group("Blurbs")
+	
+	WindowName.text_submitted.connect(_window_name_change)
+	WindowNameButton.pressed.connect(_window_name_change.bind("GameChanger"))
 
 #region Blurbs
 
@@ -74,7 +80,7 @@ func _set_graphics(set_id):
 
 func _fullscreen(val):
 	if val:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 	if !val:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 
@@ -90,5 +96,10 @@ func _change_audio(db):
 
 #TODO add a really snazzy intro animation, low priority
 
+func _window_name_change(_string):
+	if WindowName.text != null:
+		DisplayServer.window_set_title(WindowName.text)
+
 func _begin():
+	Global.Scoreboard.resize(Global.player_count)
 	get_tree().change_scene_to_file("res://set.tscn")
